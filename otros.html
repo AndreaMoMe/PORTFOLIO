@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea Montero Merino - Portfolio</title>
+    <title>Andrea Montero Merino - Portfolio - Otros</title>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -24,42 +24,30 @@
         </nav>
     </header>
 
-    <section id="Mucho más..." class="muchoMas contenedor">
+    <section id="otros" class="descripcion contenedor">
         <h2>Mucho más...</h2>
         <div class="descripcion">
             <p>Aquí reúno otros proyectos variados, como figuritas personalizadas tipo Funko Pop, platos hechos con arcilla, llaveros y más. Me gusta probar cosas nuevas y descubrir técnicas diferentes en cada creación.</p>
         </div>
-        <div class="proyectosGaleria">
-        
+        <!-- Filtros -->
+        <div class="mb-6 flex gap-4 flex-wrap">
+            <button class="filter-btn px-4 py-2 bg-blue-500 text-white rounded" data-filter="all">Todos</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="uxui">UX/UI</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="animacion">Animación</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="3d">3D</button>
         </div>
     </section>
 
     <section id="galeria" class="galeria contenedor">
-        <div class="galeria-grid">
-          <img src="contenido/Otros/otros.jpg" alt="Imagen 1">
-          <img src="contenido/Otros/completo.png" alt="Imagen 2">
-          <img src="contenido/Otros/cara.png" alt="Imagen 3">
-          <img src="contenido/Otros/WhatsApp Image 2021-12-10 at 22.49.52.jpeg" alt="Imagen 4">
-          <img src="contenido/Otros/WhatsApp Image 2022-03-10 at 13.57.02 (2).jpeg" alt="Imagen 5">
+        <!-- Galería -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="contenido/Otros/otros.jpg" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 1" />
+            <img src="contenido/Otros/completo.png" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 2" />
+            <img src="contenido/Otros/cara.png" class="project-img cursor-pointer rounded shadow" data-type="animacion" alt="Animación 1" />
+            <img src="contenido/Otros/WhatsApp Image 2021-12-10 at 22.49.52.jpeg" class="project-img cursor-pointer rounded shadow" data-type="3d" alt="3D 1" />
+            <img src="contenido/Otros/WhatsApp Image 2022-03-10 at 13.57.02 (2).jpeg" class="project-img cursor-pointer rounded shadow" data-type="3d" alt="3D 1" />
         </div>
-      </section>
-
-      <!-- Filtros -->
-    <div class="mb-6 flex gap-4 flex-wrap">
-        <button class="filter-btn px-4 py-2 bg-blue-500 text-white rounded" data-filter="all">Todos</button>
-        <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="uxui">UX/UI</button>
-        <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="animacion">Animación</button>
-        <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="3d">3D</button>
-    </div>
-    
-    <!-- Galería -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="contenido/Otros/otros.jpg" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 1" />
-        <img src="contenido/Otros/completo.png" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 2" />
-        <img src="contenido/Otros/cara.png" class="project-img cursor-pointer rounded shadow" data-type="animacion" alt="Animación 1" />
-        <img src="contenido/Otros/WhatsApp Image 2021-12-10 at 22.49.52.jpeg" class="project-img cursor-pointer rounded shadow" data-type="3d" alt="3D 1" />
-        <img src="contenido/Otros/WhatsApp Image 2022-03-10 at 13.57.02 (2).jpeg" class="project-img cursor-pointer rounded shadow" data-type="3d" alt="3D 1" />
-    </div>
+    </section>   
     
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
@@ -76,9 +64,6 @@
             <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
             <br>
             <a class="btn" href="ANDREA_MONTERO_MERINO_CV.pdf" target="_blank">Ver CV en PDF</a>
-        </div>
-        <div class="chibi-img">
-            <img src="img/p02.png" alt="Dibujo tipo chibi 2">
         </div>
     </section>
 
