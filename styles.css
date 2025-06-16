@@ -10,7 +10,7 @@ body {
   background: #f6f0fa;
   color: #2c1a38;
   line-height: 1.6;
-  padding-top: 120px;
+  padding-top: 180px;
 }
 a { text-decoration: none; color: inherit; }
 
@@ -210,7 +210,7 @@ header {
   max-width: 1200px;
   margin: auto;  
 }
-.descripcion-text h2:last-of-type {
+.descripcion-text h2 {
   font-size: 3rem;
   color: #2c1a38;
   margin-top: 0.8rem;
@@ -218,10 +218,10 @@ header {
 
 .galeria {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 1rem auto;
   padding: 2rem;
   background: #f2e8fc;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .galeria h3 {
   text-align: center;
@@ -246,6 +246,81 @@ header {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(44,26,56,0.3);
 }
+
+/* ZOOM IMG */
+/* Fondo y posición */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 4rem 1rem;
+  padding-top: 120px;
+  overflow-y: auto;
+}
+
+/* Contenedor interno */
+.lightbox-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 90%;
+  background: transparent;
+  flex-wrap: wrap;
+  
+}
+
+/* Imagen */
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Descripción */
+.lightbox-description {
+  background-color: #f2e8fc; /* Lila claro */
+  color: #2c1a38;            /* Lila oscuro */
+  padding: 1rem;
+  border-radius: 16px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.lightbox-description h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.lightbox-description p {
+  margin: 0;
+  text-align: justify;
+}
+
+/* Botón cerrar */
+.lightbox-close {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+  font-size: 2rem;
+  color: #4B0082; /* Lila oscuro */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: #9370DB; /* Lila claro */
+}
+
+
 
 /* ==== CONTACTO ==== */
 .contacto {
@@ -330,4 +405,24 @@ footer {
   .hero-text {
     padding-right: 0;
   }
+
+  /*ZOOM IMG MOVIL*/
+  .lightbox-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 20rem;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .lightbox-description {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
 }
+

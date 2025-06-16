@@ -32,7 +32,7 @@
         <!-- Filtros -->
         <div class="mb-6 flex gap-4 flex-wrap">
             <button class="filter-btn px-4 py-2 bg-blue-500 text-white rounded" data-filter="all">Todos</button>
-            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="uxui">UX/UI</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="funko">Funkos personlizados</button>
             <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="animacion">Animación</button>
             <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="3d">3D</button>
         </div>
@@ -41,7 +41,7 @@
     <section id="galeria" class="galeria contenedor">
         <!-- Galería -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <img src="contenido/Otros/otros.jpg" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 1" />
+            <img src="contenido/Otros/otros.jpg" class="project-img cursor-pointer rounded shadow" data-type="funko" data-title="Funko pop personalizado de un chico en su habitación" data-description="Funko por personalizado de un chico en su habitación con multiples detalles, elementos que representan cada deporte que realiza, titulo de la carrera, y otros detalles." data-tools="Impresión 3D, archilla, acrilico" alt="funko 01" />
             <img src="contenido/Otros/completo.png" class="project-img cursor-pointer rounded shadow" data-type="uxui" alt="UX/UI 2" />
             <img src="contenido/Otros/cara.png" class="project-img cursor-pointer rounded shadow" data-type="animacion" alt="Animación 1" />
             <img src="contenido/Otros/WhatsApp Image 2021-12-10 at 22.49.52.jpeg" class="project-img cursor-pointer rounded shadow" data-type="3d" alt="3D 1" />
@@ -50,8 +50,17 @@
     </section>   
     
     <!-- Lightbox -->
+     
     <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
-        <img id="lightbox-img" class="max-w-full max-h-full rounded-lg shadow-lg" />
+        <button id="close-lightbox" class="lightbox-close">x</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Imagen ampliada" />
+            <div class="lightbox-description">
+            <h4 id="lightbox-title"></h4>
+            <p id="lightbox-description"></p>
+            <p id="lightbox-tools"></p>
+            </div>
+        </div>
     </div>
 
     <section id="contacto" class="contacto contenedor">
