@@ -1,44 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrea Montero Merino - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Montero Merino - Portfolio - Desarrollo de videojuegos</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
         <h1 class="logo"><a href="index.html">Andrea Montero Merino</a></h1>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" id="menu-toggle">
+        ☰
+        </button> 
+        
+        <ul class="nav-links" id="nav-links">
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         </nav>
     </header>
 
+    <section id="proyectos" class="descripcion contenedor">
+        <h1>Diseño UX / UI</h1>
+        <div class="descripcion">
+            <p>Aquí muestro diseños de interfaces pensadas para ofrecer experiencias digitales intuitivas y agradables. Mi enfoque está en crear soluciones que faciliten la interacción del usuario, equilibrando usabilidad, accesibilidad y un diseño visual cuidado.</p>
+        </div>
+        <!-- Filtros -->
+        <div class="mb-6 flex gap-4 flex-wrap">
+            <button class="filter-btn px-4 py-2 bg-[#2c1a38] text-white rounded" data-filter="all">Todos</button>
+            <button class="filter-btn px-4 py-2 bg-[#f2e8fc] rounded" data-filter="caso0">Caso 0</button>
+            <button class="filter-btn px-4 py-2 bg-[#f2e8fc] rounded" data-filter="morningRoutine">Morning Routine</button>
+            <button class="filter-btn px-4 py-2 bg-[#f2e8fc] rounded" data-filter="superPug">Super Pug</button>
+            <button class="filter-btn px-4 py-2 bg-[#f2e8fc] rounded" data-filter="duelo">Duelo de insultos</button>
+            <button class="filter-btn px-4 py-2 bg-[#f2e8fc] rounded" data-filter="sokoban">Mi Sokoban</button>
+        </div>
+    </section>
+
+    <section id="galeria" class="galeria contenedor">
+        <!-- Galería -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="contenido/DesarrolloVideojeegos/caso0/videojuegos.png" class="project-img cursor-pointer rounded shadow" data-type="caso0" 
+            data-title="Caso 0 — Escape room narrativo en 3D" 
+            data-description="Caso 0 es un juego en primera persona que combina el misterio y la lógica de una escape room con una narrativa inmersiva. El jugador asume el rol de un inspector que explora un hotel abandonado, escenario de antiguos crímenes sin resolver. A lo largo del recorrido, deberá resolver acertijos, encontrar pistas y reconstruir la historia que esconde el lugar.
+            Este proyecto fue desarrollado como Trabajo Final del Máster en Diseño y Programación de Videojuegos en la Universitat Oberta de Catalunya (UOC). En un plazo de 4 meses, se llevó a cabo todo el proceso, desde el concepto hasta la programación, de forma individual." 
+            data-tools="Unity · Maya · Photoshop" 
+            data-link="https://www.youtube.com/watch?v=YAzePX9deqY" alt="caso 0" />
+            <img src="contenido/DesarrolloVideojeegos/caso0/fondopolicia.png" class="project-img cursor-pointer rounded shadow" data-type="caso0" 
+            data-title="Frame del gameplay – Caso 0" 
+            data-description="Captura del entorno jugable de Caso 0, que muestra la atmósfera oscura y detallada del hotel abandonado. Refleja el enfoque narrativo y la ambientación visual creada para sumergir al jugador en una experiencia de misterio e investigación." 
+            data-tools="Unity · Maya · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=YAzePX9deqY" alt="caso 0" />
+            <img src="contenido/DesarrolloVideojeegos/caso0/finalVestubulobase.png" class="project-img cursor-pointer rounded shadow" data-type="caso0" 
+            data-title="Frame del gameplay – Caso 0" 
+            data-description="Captura del entorno jugable de Caso 0, que muestra la atmósfera oscura y detallada del hotel abandonado. Refleja el enfoque narrativo y la ambientación visual creada para sumergir al jugador en una experiencia de misterio e investigación." 
+            data-tools="Unity · Maya · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=YAzePX9deqY" alt="caso 0" />
+           <img src="contenido/DesarrolloVideojeegos/caso0/prueba01.png" class="project-img cursor-pointer rounded shadow" data-type="caso0" 
+            data-title="Frame del gameplay – Caso 0" 
+            data-description="Captura del entorno jugable de Caso 0, que muestra la atmósfera oscura y detallada del hotel abandonado. Refleja el enfoque narrativo y la ambientación visual creada para sumergir al jugador en una experiencia de misterio e investigación." 
+            data-tools="Unity · Maya · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=YAzePX9deqY" alt="caso 0" />
+
+            <img src="contenido/DesarrolloVideojeegos/image (7).png" class="project-img cursor-pointer rounded shadow" data-type="morningRoutine" 
+            data-title="Morning Routine – Portada del juego" 
+            data-description="Morning Routine es un juego narrativo en 2D que invita a descubrir las pequeñas historias que se esconden en la rutina matutina de distintos personajes. A través de interacciones sencillas, el jugador accede a pensamientos y emociones mientras los protagonistas se preparan para comenzar su día.
+            Desarrollado como parte de la asignatura de Programación de Videojuegos 2D, este proyecto apuesta por una narrativa íntima y reflexiva que pone el foco en la diversidad de experiencias cotidianas." 
+            data-tools="Unity · Photoshop" 
+            data-link="https://www.youtube.com/watch?v=1vfG63jttMU" alt="Morning Routine – Portada del juego" />
+            <img src="contenido/DesarrolloVideojeegos/image (6).png" class="project-img cursor-pointer rounded shadow" data-type="morningRoutine" 
+            data-title="Frame del gameplay – Morning Routine" 
+            data-description="Captura del gameplay de Morning Routine, donde se puede apreciar el estilo visual del juego y su enfoque centrado en lo cotidiano. Cada escena representa un momento significativo de la rutina matinal de los personajes, contribuyendo a construir una narrativa cercana y humana." 
+            data-tools="Unity · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=1vfG63jttMU" alt="Frame del gameplay – Morning Routine" />
+       
+            <img src="contenido/DesarrolloVideojeegos/image (5).png" class="project-img cursor-pointer rounded shadow" data-type="superPug" 
+            data-title="Super Pug – Portada del juego" 
+            data-description="Super Pug es una reinterpretación del nivel inicial de Mario Bros, donde el mítico fontanero es sustituido por un simpático perro de raza Pug. Esta versión combina la nostalgia del clásico con un enfoque fresco y divertido, manteniendo la esencia del juego original.
+            Creado como ejercicio universitario, el proyecto se transformó en una propuesta original gracias al cambio de protagonista y enemigos. Una forma lúdica de reinterpretar mecánicas conocidas con una estética más actual y desenfadada." 
+            data-tools="Unity · Photoshop" 
+            data-link="https://www.youtube.com/watch?v=i9NYfpNJSZo" alt="Super Pug – Portada del juego" />
+            <img src="contenido/DesarrolloVideojeegos/image (4).png" class="project-img cursor-pointer rounded shadow" data-type="superPug" 
+            data-title="Gameplay – Super Pug" 
+            data-description="Captura del nivel jugable de Super Pug, donde el Pug recorre escenarios repletos de brócolis enemigos y monedas. El diseño mantiene la estructura clásica del Mario original, pero con elementos personalizados, como Power Ups, que son palomitas o el castillo final, lleno de comida." 
+            data-tools="Unity · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=i9NYfpNJSZo" alt="Gameplay – Super Pug" />
+       
+            <img src="contenido/DesarrolloVideojeegos/image (3).png" class="project-img cursor-pointer rounded shadow" data-type="duelo" 
+            data-title="Duelo de Insultos – Portada del juego" 
+            data-description="Duelo de Insultos es un videojuego 2D inspirado en el mítico Monkey Island, centrado exclusivamente en los icónicos combates verbales. Los jugadores se enfrentan a batallas de ingenio en las que deben responder con el insulto correcto, siguiendo combinaciones lógicas que van aprendiendo a lo largo de la partida.
+            En esta versión, el repertorio de frases ha sido ampliado, convirtiendo las peleas de insultos en el eje principal del juego." 
+            data-tools="Unity · Photoshop" 
+            data-link="https://www.youtube.com/watch?v=pWe30vbkTlI" alt="Duelo de Insultos – Portada del juego" />
+            <img src="contenido/DesarrolloVideojeegos/image (2).png" class="project-img cursor-pointer rounded shadow" data-type="duelo" 
+            data-title="Gameplay – Duelo de Insultos" 
+            data-description="Captura del juego en pleno combate verbal. Como desarrolladora, además de la programación, me encargué de diseñar los sprites, aportando un estilo visual propio que refuerza el tono humorístico y caricaturesco del juego.
+            Este proyecto fue desarrollado dentro de la asignatura de Programación de Videojuegos 2D, y se centra en ofrecer una experiencia entretenida basada en el ingenio y la memoria." 
+            data-tools="Unity · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=pWe30vbkTlI" alt="Frame del gameplay – Morning Routine" />
+       
+            <img src="contenido/DesarrolloVideojeegos/image.png" class="project-img cursor-pointer rounded shadow" data-type="sokoban" 
+            data-title="Mi Sokoban – Portada del juego" 
+            data-description="Mi Sokoban es una versión renovada del clásico juego de puzles, donde el jugador debe mover cajas hasta ubicarlas en puntos específicos dentro de un laberinto. Esta reinterpretación añade una funcionalidad destacada: un editor de niveles integrado.
+            No solo se trata de resolver desafíos, sino de diseñarlos. Los jugadores pueden crear, guardar y jugar sus propios niveles, fomentando la creatividad y el pensamiento lógico.
+            Proyecto desarrollado para la asignatura de Diseño de Niveles del Máster en Diseño y Programación de Videojuegos (UOC)." 
+            data-tools="Unity · Photoshop" 
+            data-link="https://www.youtube.com/watch?v=mfbalaOFcEc" alt="Mi Sokoban – Portada del juego" />
+            <img src="contenido/DesarrolloVideojeegos/image (1).png" class="project-img cursor-pointer rounded shadow" data-type="sokoban" 
+            data-title="Gameplay – Mi Sokoban" 
+            data-description="Captura en juego que muestra la interfaz principal del editor de niveles en acción. Esta funcionalidad convierte a Mi Sokoban en algo más que un simple juego de lógica: es una herramienta creativa donde el jugador se convierte también en diseñador.
+
+La implementación del editor supuso un reto técnico clave dentro del desarrollo, centrado en usabilidad y flexibilidad para el usuario." 
+            data-tools="Unity · Photoshop"             
+            data-link="https://www.youtube.com/watch?v=mfbalaOFcEc" alt="Gameplay – Mi Sokoban" />
+       
+       
+       
+        </div>
+    </section>   
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
+        <button id="close-lightbox" class="lightbox-close">x</button>
+        <div class="lightbox-content">
+            <!-- <img id="lightbox-img" src="" alt="Imagen ampliada" /> --> 
+            <div id="lightbox-media"></div> <!-- Aquí se insertará imagen o video -->
+
+            <div class="lightbox-description">
+            <h4 id="lightbox-title"></h4>
+            <p id="lightbox-description"></p>
+            <br>
+            <p id="lightbox-tools"></p>
+            <br>
+            <a id="lightbox-link" href="#" target="_blank" class="inline-block px-4 py-2 bg-[#2c1a38] text-white rounded mt-2" style="display: none;">Ver más</a>
+            </div>
+        </div>
+    </div>
 
     <section id="contacto" class="contacto contenedor">
         <div class="datos-contacto">
             <h3>¿Te gustó lo que viste? Contáctame</h3>
-            <a href="mailto:ghouliadart@gmail.com">ghouliadart@gmail.com</a>
-            <p>644 43 20 04</p>
-            <a href="https://www.linkedin.com/in/andrea-montero-ba8749153/?trk=opento_sprofile_topcard">LinkedIn</a>
-            <br>
-            <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
-            <br>
+            <div class="flex items-center gap-2">
+                <img src="icons/material-symbols_mail-outline-rounded.png" alt="mail icon" class="w-6 h-6">
+                <a href="mailto:ghouliadart@gmail.com">GhouldArt@gmail.com</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <img src="icons/mingcute_linkedin-line.png" alt="linkedin icon" class="w-6 h-6">
+                <a href="https://www.linkedin.com/in/andrea-montero-ba8749153/?trk=opento_sprofile_topcard">LinkedIn</a>
+                </div>
+
+            <div class="flex items-center gap-2">
+                <img src="icons/ri_instagram-line.png" alt="instagram icon" class="w-6 h-6">
+                <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
+            </div>
+
             <a class="btn" href="ANDREA_MONTERO_MERINO_CV.pdf" target="_blank">Ver CV en PDF</a>
-        </div>
-        <div class="chibi-img">
-            <img src="img/p02.png" alt="Dibujo tipo chibi 2">
         </div>
     </section>
 
     <footer>
         <p>Andrea Montero Merino - Portafolio 2025</p>
     </footer>
+
+    <script src="galeria.js" defer></script>
 </body>
 </html>
