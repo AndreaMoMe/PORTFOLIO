@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxDescription = document.getElementById('lightbox-description');
   const lightboxTools = document.getElementById('lightbox-tools');
   const closeButton = document.getElementById('close-lightbox');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
 
   // Filtro
   filterButtons.forEach(button => {
@@ -42,15 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Cerrar lightbox al hacer clic fuera del contenido
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.add('hidden');
-    }
-  });
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+      }
+    });
+  }
 
   // Cerrar con botón (la X)
-  closeButton.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-  });
+   if (closeButton && lightbox) {
+    closeButton.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+  }
+
+  //menu hamburgesa
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
+  } else {
+    console.warn('No se encontró el botón o los enlaces de navegación');
+  }
+
 });
 

@@ -44,6 +44,15 @@ header {
   color: #d9bdf2;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 /* ==== HERO ==== */
 .hero {
   display: flex;
@@ -191,10 +200,10 @@ header {
 }
 
 /* ==== FONDOS DE PROYECTOS ==== */
-.proyecto-grafico    { background-image: url("contenido/DisenoGrafico/diseñoGrafico.png"); }
-.proyecto-ux         { background-image: url("contenido/DisenoUxUi/uxUi.png"); }
+.proyecto-grafico    { background-image: url("contenido/DisenoGrafico/rrss/1713298974297.jpg"); }
+.proyecto-ux         { background-image: url("contenido/DisenoUxUi/volu/iPhone\ 15.png"); }
 .proyecto-ilustracion{ background-image: url("contenido/Ilustracion/ilustracion.png"); }
-.proyecto-juegos     { background-image: url("contenido/DesarrolloVideojeegos/videojuegos.png"); }
+.proyecto-juegos     { background-image: url("contenido/DesarrolloVideojeegos/prueba02.png"); }
 .proyecto-modelado   { background-image: url("contenido/Modelado/"); } /* Agrega el nombre del archivo */
 .proyecto-otros      { background-image: url("contenido/Otros/otros.jpg"); }
 
@@ -320,8 +329,6 @@ header {
   color: #9370DB; /* Lila claro */
 }
 
-
-
 /* ==== CONTACTO ==== */
 .contacto {
   display: flex;
@@ -389,15 +396,34 @@ footer {
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu-toggle {
+    display: block;
   }
+
   .nav-links {
+    display: none;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
+    background: #2c1a38;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
   }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding: 0.5rem 2rem;
+  }
+
+  
+
+
   .hero {
     flex-direction: column;
     text-align: center;
