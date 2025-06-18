@@ -29,7 +29,7 @@
         </nav>
     </header>
 
-    <section id="descripcion" class="descripcion contenedor">
+    <section id="proyectos" class="descripcion contenedor">
         <h1>Mucho más...</h1>
         <div class="descripcion">
             <p>En esta sección presento piezas únicas hechas a mano, como figuras personalizadas, esculturas y otros proyectos artísticos. Son otra forma de explorar y expresar mi creatividad fuera del diseño digital.</p>
@@ -38,7 +38,7 @@
         <div class="mb-6 flex gap-4 flex-wrap">
             <button class="filter-btn px-4 py-2 bg-blue-500 text-white rounded" data-filter="all">Todos</button>
             <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="funko">Funkos personlizados</button>
-            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="arcilla">Arrcilla</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="arcilla">Arcilla</button>
         </div>
     </section>
 
@@ -73,7 +73,10 @@
     <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
         <button id="close-lightbox" class="lightbox-close">x</button>
         <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="Imagen ampliada" />
+            <!-- <img id="lightbox-img" src="" alt="Imagen ampliada" /> --> 
+            <div id="lightbox-media"></div> <!-- Aquí se insertará imagen o video -->
+
+
             <div class="lightbox-description">
             <h4 id="lightbox-title"></h4>
             <p id="lightbox-description"></p>
@@ -86,12 +89,21 @@
     <section id="contacto" class="contacto contenedor">
         <div class="datos-contacto">
             <h3>¿Te gustó lo que viste? Contáctame</h3>
-            <a href="mailto:ghouliadart@gmail.com">ghouliadart@gmail.com</a>
-            <p>644 43 20 04</p>
-            <a href="https://www.linkedin.com/in/andrea-montero-ba8749153/?trk=opento_sprofile_topcard">LinkedIn</a>
-            <br>
-            <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
-            <br>
+            <div class="flex items-center gap-2">
+                <img src="icons/material-symbols_mail-outline-rounded.png" alt="mail icon" class="w-6 h-6">
+                <a href="mailto:ghouliadart@gmail.com">GhouldArt@gmail.com</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <img src="icons/mingcute_linkedin-line.png" alt="linkedin icon" class="w-6 h-6">
+                <a href="https://www.linkedin.com/in/andrea-montero-ba8749153/?trk=opento_sprofile_topcard">LinkedIn</a>
+                </div>
+
+            <div class="flex items-center gap-2">
+                <img src="icons/ri_instagram-line.png" alt="instagram icon" class="w-6 h-6">
+                <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
+            </div>
+
             <a class="btn" href="ANDREA_MONTERO_MERINO_CV.pdf" target="_blank">Ver CV en PDF</a>
         </div>
     </section>
