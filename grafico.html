@@ -1,44 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrea Montero Merino - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Montero Merino - Portfolio - Diseño Gráfico</title>
+    
+    <link rel="stylesheet" href="styles.css">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
         <h1 class="logo"><a href="index.html">Andrea Montero Merino</a></h1>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" id="menu-toggle">
+        ☰
+        </button> 
+        
+        <ul class="nav-links" id="nav-links">
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         </nav>
     </header>
 
+    <section id="descripcion" class="descripcion contenedor">
+        <h1>Diseño gráfico</h1>
+        <div class="descripcion">
+            <p>En esta sección encontrarás proyectos centrados en la creación de identidades visuales, piezas publicitarias y materiales gráficos variados. Trabajo para comunicar mensajes claros y atractivos, combinando estética y funcionalidad para potenciar la imagen de marcas y productos.</p>
+        </div>
+        <!-- Filtros -->
+        <div class="mb-6 flex gap-4 flex-wrap">
+            <button class="filter-btn px-4 py-2 bg-blue-500 text-white rounded" data-filter="all">Todos</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="rrss">RRSSS</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="logo">Logo</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="packaging">Packaging</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="carteles">Carteles</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="impresion">Impresión</button>
+            <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-filter="animacion">Aniamción 2D</button>
+
+
+
+        </div>
+    </section>
+
+    <section id="galeria" class="galeria contenedor">
+        <!-- Galería -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="contenido/DisenoGrafico/impresion/CasalLamba.png" class="project-img cursor-pointer rounded shadow" data-type="impresion, carteles" 
+            data-title="Cartel para Casal Lamba" 
+            data-description="Cartel atemporal diseñado para promocionar la web de Casal Lamba. En él se representa la flor emblemática de Barcelona, compuesta por vidrieras que recrean varios edificios icónicos de la ciudad. Los colores utilizados son los de la bandera LGTBIQ+, reflejando la lucha y los valores que defiende esta asociación. El diseño combina identidad local con un mensaje de diversidad e inclusión." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="cartel 01" />
+            <img src="contenido/DisenoGrafico/impresion/OpenArms.png" class="project-img cursor-pointer rounded shadow" data-type="impresion, carteles" 
+            data-title="Cartel para Open Arms" 
+            data-description="Cartel diseñado para visibilizar la labor de Open Arms en la ayuda a personas migrantes. El diseño refleja la lucha por hacer llegar apoyo, combinando un mensaje de solidaridad y esperanza." 
+            data-tools="Adobe Photoshop · Adobe Illustrator" alt="cartel 02" />
+            <img src="contenido/DisenoGrafico/impresion/TopManta.png" class="project-img cursor-pointer rounded shadow" data-type="impresion, carteles" 
+            data-title="Cartel para Top Manta" 
+            data-description="Cartel diseñado para difundir la web de Top Manta, una organización que apoya a personas que venden en la calle ayudándoles a crear sus propios productos y diseños de vestuario para desarrollar su imagen propia. El cartel utiliza uno de sus propios diseños como fondo, poniendo en valor su identidad y trabajo." 
+            data-tools="Adobe Photoshop · Adobe Illustrator" alt="cartel 03" />
+            <img src="contenido/DisenoGrafico/impresion/arrelsFundasio.png" class="project-img cursor-pointer rounded shadow" data-type="impresion, carteles"             
+            data-title="Cartel para la Fundación Arrels" 
+            data-description="Diseño de cartel para la Fundación Arrels que muestra el dibujo de una persona viviendo en la calle, iluminada por una farola emblemática de Barcelona. La luz simboliza la esperanza, el apoyo y el acompañamiento que representa la labor de la fundación." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="funko 04" />
+            <img src="contenido/DisenoGrafico/impresion/3.png" class="project-img cursor-pointer rounded shadow" data-type="impresion" 
+            data-title="Proyecto de concienciación sobre la sequía y el consumo de agua" 
+            data-description="Infografía diseñadas para una feria de concienciación sobre la sequía, enfocadas en el impacto del consumo de agua relacionado con la ropa. Estas piezas muestran datos y consejos para reducir el malgasto, desde el lavado hasta la producción y el desecho de prendas." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="infografia 01" />
+            <img src="contenido/DisenoGrafico/impresion/7.png" class="project-img cursor-pointer rounded shadow" data-type="impresion" 
+            data-title="Proyecto de concienciación sobre la sequía y el consumo de agua" 
+            data-description="Infografía diseñadas para una feria de concienciación sobre la sequía, enfocadas en el impacto del consumo de agua relacionado con la ropa. Estas piezas muestran datos y consejos para reducir el malgasto, desde el lavado hasta la producción y el desecho de prendas." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="infografia 02" />
+            <img src="contenido/DisenoGrafico/impresion/9.png" class="project-img cursor-pointer rounded shadow" data-type="impresion" 
+            data-title="Proyecto de concienciación sobre la sequía y el consumo de agua" 
+            data-description="Infografía diseñadas para una feria de concienciación sobre la sequía, enfocadas en el impacto del consumo de agua relacionado con la ropa. Estas piezas muestran datos y consejos para reducir el malgasto, desde el lavado hasta la producción y el desecho de prendas." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="infografia 03" />
+            <img src="contenido/DisenoGrafico/impresion/16.png" class="project-img cursor-pointer rounded shadow" data-type="impresion" 
+            data-title="Proyecto de concienciación sobre la sequía y el consumo de agua" 
+            data-description="Infografía diseñadas para una feria de concienciación sobre la sequía, enfocadas en el impacto del consumo de agua relacionado con la ropa. Estas piezas muestran datos y consejos para reducir el malgasto, desde el lavado hasta la producción y el desecho de prendas." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="infografia 04" />
+             <img src="contenido/DisenoGrafico/impresion/stante-campañasequia.jpg" class="project-img cursor-pointer rounded shadow" data-type="impresion" 
+            data-title="Stand de concienciación sobre la sequía" 
+            data-description="Fotografía del stand diseñado para la feria, donde se exhiben las infografías impresas en cubos apilados junto con una selección de ropa. El espacio busca sensibilizar al público sobre el uso responsable del agua en la industria textil y en el día a día." 
+            alt="infografia 04" />
+            <img src="contenido/DisenoGrafico/rrss/1713298974168.jpg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para redes sociales – Promoción y visibilidad" 
+            data-description="Pieza diseñada para redes sociales con el objetivo de promocionar y dar visibilidad a la empresa y sus servicios. Todas siguen el manual de marca, respetando el tono y estilo visual corporativo para mantener la coherencia de la imagen." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="rrss 01" />
+            <img src="contenido/DisenoGrafico/rrss/1713298974211.jpg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para redes sociales – Promoción y visibilidad" 
+            data-description="Pieza diseñada para redes sociales con el objetivo de promocionar y dar visibilidad a la empresa y sus servicios. Todas siguen el manual de marca, respetando el tono y estilo visual corporativo para mantener la coherencia de la imagen." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="rrss 02" />
+            <img src="contenido/DisenoGrafico/rrss/1713298974256.jpg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para redes sociales – Promoción y visibilidad" 
+            data-description="Pieza diseñada para redes sociales con el objetivo de promocionar y dar visibilidad a la empresa y sus servicios. Todas siguen el manual de marca, respetando el tono y estilo visual corporativo para mantener la coherencia de la imagen." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="rrss 03" />
+            <img src="contenido/DisenoGrafico/rrss/1713298974297.jpg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para redes sociales – Promoción y visibilidad" 
+            data-description="Pieza diseñada para redes sociales con el objetivo de promocionar y dar visibilidad a la empresa y sus servicios. Todas siguen el manual de marca, respetando el tono y estilo visual corporativo para mantener la coherencia de la imagen." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="rrss 04" />
+            <img src="contenido/DisenoGrafico/rrss/1713298974338.jpg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para redes sociales – Promoción y visibilidad" 
+            data-description="Pieza diseñada para redes sociales con el objetivo de promocionar y dar visibilidad a la empresa y sus servicios. Todas siguen el manual de marca, respetando el tono y estilo visual corporativo para mantener la coherencia de la imagen." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="rrss 05" />
+            <img src="contenido/DisenoGrafico/rrss/WhatsApp Image 2024-04-16 at 22.56.38.jpeg" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para publicación de resultados – Club Tenis Taula Olesa" 
+            data-description="Imágen diseñada para actualizar de forma visual y atractiva los resultados de los partidos del Club Tenis Taula Olesa. El objetivo es facilitar la comunicación con el público y dinamizar la difusión de la información." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="ctto 01" />
+            <img src="contenido/DisenoGrafico/rrss/unnamed (1).png" class="project-img cursor-pointer rounded shadow" data-type="rrss" 
+            data-title="Diseño para publicación de resultados – Club Tenis Taula Olesa" 
+            data-description="Imágen diseñada para actualizar de forma visual y atractiva los resultados de los partidos del Club Tenis Taula Olesa. El objetivo es facilitar la comunicación con el público y dinamizar la difusión de la información." 
+            data-tools="Adobe Illustrator · Adobe Photoshop" alt="ctto 02" />
+            <video class="project-img cursor-pointer rounded shadow" data-type="rrss, animacion" 
+            data-title="Video especial de Navidad – Club Tenis Taula Olesa" 
+            data-description="Video creado para felicitar las fiestas navideñas en nombre del Club Tenis Taula Olesa. Manteniendo la identidad visual del club, el video busca transmitir un mensaje cercano y festivo para la comunidad." 
+            data-tools="Adobe Illustrator · Adobe Photoshop · Adobe Premiere Pro" alt="ctto 02" 
+             controls
+            muted
+            preload="metadata"
+            max-width="400">
+            <source src="contenido/DisenoGrafico/rrss/Cttolesanavidad.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+            </video>
+        </div>
+    </section>   
+    
+    <!-- Lightbox -->
+     
+    <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
+        <button id="close-lightbox" class="lightbox-close">x</button>
+        <div class="lightbox-content">
+            <!-- <img id="lightbox-img" src="" alt="Imagen ampliada" /> --> 
+            <div id="lightbox-media"></div> <!-- Aquí se insertará imagen o video -->
+
+
+            <div class="lightbox-description">
+            <h4 id="lightbox-title"></h4>
+            <p id="lightbox-description"></p>
+            <br>
+            <p id="lightbox-tools"></p>
+            </div>
+        </div>
+    </div>
 
     <section id="contacto" class="contacto contenedor">
         <div class="datos-contacto">
             <h3>¿Te gustó lo que viste? Contáctame</h3>
             <a href="mailto:ghouliadart@gmail.com">ghouliadart@gmail.com</a>
-            <p>644 43 20 04</p>
+            <br>
             <a href="https://www.linkedin.com/in/andrea-montero-ba8749153/?trk=opento_sprofile_topcard">LinkedIn</a>
             <br>
             <a href="https://www.instagram.com/GhouldArt">@GhouldArt</a>
             <br>
             <a class="btn" href="ANDREA_MONTERO_MERINO_CV.pdf" target="_blank">Ver CV en PDF</a>
         </div>
-        <div class="chibi-img">
-            <img src="img/p02.png" alt="Dibujo tipo chibi 2">
-        </div>
     </section>
 
     <footer>
         <p>Andrea Montero Merino - Portafolio 2025</p>
     </footer>
+
+    <script src="galeria.js" defer></script>
 </body>
 </html>

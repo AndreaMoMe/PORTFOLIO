@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const images = document.querySelectorAll('.project-img');
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxMedia = document.getElementById('lightbox-media');
   const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxDescription = document.getElementById('lightbox-description');
   const lightboxTools = document.getElementById('lightbox-tools');
@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = button.dataset.filter;
 
       images.forEach(img => {
-        if (filter === 'all' || img.dataset.type === filter) {
+        const types = img.dataset.type.split(/[\s,]+/);
+        if (filter === 'all' || types.includes(filter)) {
           img.classList.remove('hidden');
         } else {
           img.classList.add('hidden');
@@ -29,19 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Lightbox con datos
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+  images.forEach(media => {
+    media.addEventListener('click', () => {
+      lightboxMedia.innerHTML = ''; // Limpia contenido previo
 
-      // Asigna los textos del dataset si existen
-      lightboxTitle.textContent = img.dataset.title || '';
-      lightboxDescription.textContent = img.dataset.description || '';
-      lightboxTools.textContent = img.dataset.tools ? `Herramientas: ${img.dataset.tools}` : '';
+      if (media.tagName.toLowerCase() === 'img') {
+        const img = document.createElement('img');
+        img.src = media.src;
+        img.alt = media.alt || '';
+        img.classList.add('w-full', 'rounded');
+        lightboxMedia.appendChild(img);
+      } else if (media.tagName.toLowerCase() === 'video') {
+        const video = document.createElement('video');
+        video.src = media.querySelector('source')?.src || media.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.classList.add('rounded-xl', 'overflow-hidden', // Corta lo que se sale del borde
+        'block', 'max-w-full', 'max-h-[80vh]', 'mx-auto');
+        lightboxMedia.appendChild(video);
+      }
+
+      lightboxTitle.textContent = media.dataset.title || '';
+      lightboxDescription.textContent = media.dataset.description || '';
+      lightboxTools.textContent = media.dataset.tools ? `Herramientas: ${media.dataset.tools}` : '';
 
       lightbox.classList.remove('hidden');
     });
   });
+
 
   // Cerrar lightbox al hacer clic fuera del contenido
   if (lightbox) {

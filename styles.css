@@ -14,6 +14,8 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
+h1 { font-size: 6rem; }
+
 /* ==== NAVBAR ==== */
 header {
   background: #2c1a38;
@@ -219,10 +221,11 @@ header {
   max-width: 1200px;
   margin: auto;  
 }
-.descripcion-text h2 {
-  font-size: 3rem;
-  color: #2c1a38;
-  margin-top: 0.8rem;
+
+#descripcion h1 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.1rem;
 }
 
 .galeria {
