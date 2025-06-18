@@ -24,10 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      filterButtons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
-      button.classList.add('bg-blue-500', 'text-white');
+      filterButtons.forEach(btn => {
+        btn.style.backgroundColor = '#f2e8fc'; // gris claro (tailwind gray-300)
+        btn.style.color = '#2c1a38'; // lila oscuro
+      });
+
+      button.style.backgroundColor = '#2c1a38';
+      button.style.color = 'white';
     });
   });
+
 
   // Lightbox con datos
   images.forEach(media => {
@@ -53,6 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxTitle.textContent = media.dataset.title || '';
       lightboxDescription.textContent = media.dataset.description || '';
       lightboxTools.textContent = media.dataset.tools ? `Herramientas: ${media.dataset.tools}` : '';
+
+      // Enlace dinámico si aplica // 🔗 Enlace dinámico
+      const enlace = media.dataset.link; // ← aquí tomamos el enlace del dataset
+      const linkElement = document.getElementById('lightbox-link');
+      
+      if (enlace) {
+        linkElement.href = enlace;
+        linkElement.style.display = 'inline';
+        linkElement.textContent = 'Ver Más';
+      } else {
+        linkElement.style.display = 'none';
+      }
 
       lightbox.classList.remove('hidden');
     });

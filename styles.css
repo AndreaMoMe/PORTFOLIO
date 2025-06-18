@@ -114,7 +114,7 @@ header {
 
 /* ==== INVENTARIO ==== */
 .inventario, .lenguas {
-  background: #e6d8f4;
+  background: #f2e8fc;
   padding: 2rem;
   margin: 2rem auto;
   max-width: 1200px;
@@ -170,7 +170,7 @@ header {
   padding: 2rem;
 }
 .proyectos h3 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
 }
 .grid-proyectos {
@@ -222,7 +222,7 @@ header {
   margin: auto;  
 }
 
-#descripcion h1 {
+#proyectos h1 {
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.1rem;
@@ -329,7 +329,7 @@ header {
 }
 
 .lightbox-close:hover {
-  color: #9370DB; /* Lila claro */
+  color: #2c1a38; /* Lila claro */
 }
 
 /* ==== CONTACTO ==== */
