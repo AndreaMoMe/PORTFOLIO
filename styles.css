@@ -61,7 +61,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 4rem 2rem;
+  padding: 1.5rem;
   max-width: 1200px;
   margin: auto;
 }
@@ -84,6 +84,11 @@ header {
   color: #2c1a38;
   margin-top: 0.8rem;
 }
+.hero h3 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
 .hero-text p {
   margin-top: 1rem;
   max-width: 500px;
@@ -97,19 +102,24 @@ header {
 }
 .hero-img img {
   max-width: 400px;
-  border-radius: 50%;
+  border-radius: 40%;
 }
 
 /* ==== SOBRE MÍ ==== */
 .sobre-mi {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 4rem auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
   max-width: 1200px;
   background: #f2e8fc;
   border-radius: 12px;
+}
+
+.sobre-mi h3 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
 }
 
 /* ==== INVENTARIO ==== */
@@ -127,6 +137,7 @@ header {
 .inventario h3, .lenguas h3 {
   text-align: left;
   margin-bottom: 2rem;
+  font-weight: bold;
 }
 .inventario-grid {
   display: grid;
@@ -145,7 +156,7 @@ header {
 }
 .inventario-category h4 {
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f2e8fc;
   padding-bottom: 0.5rem;
 }
 .inventario-category ul {
@@ -172,6 +183,7 @@ header {
 .proyectos h3 {
   text-align: left;
   margin-bottom: 2rem;
+  font-weight: bold;
 }
 .grid-proyectos {
   display: grid;
@@ -188,16 +200,19 @@ header {
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(26, 3, 42, 0.645);
   color: white;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
 }
+
 .proyecto:hover {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(133, 103, 130, 0.737);
   transform: scale(1.03);
+  color: white;
+  font-size: 1.5rem;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
@@ -208,8 +223,6 @@ header {
 .proyecto-juegos     { background-image: url("contenido/DesarrolloVideojeegos/prueba02.png"); }
 .proyecto-modelado   { background-image: url("contenido/Modelado/"); } /* Agrega el nombre del archivo */
 .proyecto-otros      { background-image: url("contenido/Otros/otros.jpg"); }
-
-
 
 /* ==== GALERÍA ==== */
 .descripcion {
@@ -239,6 +252,7 @@ header {
   text-align: center;
   margin-bottom: 2rem;
   color: #2c1a38;
+  font-weight: bold;
 }
 .galeria-grid {
   display: grid;
@@ -344,12 +358,14 @@ header {
   padding: 2rem;
   border-radius: 12px;
 }
+
 .contacto-info {
   flex: 2;
   min-width: 280px;
 }
-.contacto-info h3 {
+.contacto h3 {
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 .contacto-info a, .contacto-info p {
   display: block;
