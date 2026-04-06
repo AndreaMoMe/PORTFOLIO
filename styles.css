@@ -336,27 +336,41 @@ header .navbar {
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* permite que el contenido se mueva hacia arriba si es alto */
   z-index: 100;
-  padding: 4rem 1rem;
-  padding-top: 120px;
-  overflow-y: auto;
+  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
+  /*overflow-y: auto; /* permite scroll si el contenido es más alto que la ventana */
 }
 
+/* Contenedor principal del lightbox */
 .lightbox-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
   max-width: 90%;
-  background: transparent;
+  max-height: 100%;
 }
 
-.lightbox-content img {
+.lightbox-media {
+  flex: 2;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-media img,
+.lightbox-media video,
+.lightbox-media iframe {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: calc(60vh - 40px); /* deja espacio para descripción */
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  object-fit: contain;
 }
 
 .lightbox-description {
@@ -366,7 +380,10 @@ header .navbar {
   border-radius: 16px;
   max-width: 400px;
   flex: 1;
+  overflow-y: auto; /* permite scroll si es muy larga */
+  max-height: auto;
 }
+
 
 .lightbox-description h4 {
   margin-top: 0;
@@ -375,13 +392,13 @@ header .navbar {
 
 .lightbox-description p {
   margin: 0;
-  text-align: justify;
+  text-align: left;
 }
 
 .lightbox-close {
   position: absolute;
-  top: 6rem;
-  right: 6rem;
+  top: 1rem;
+  right: 1rem;
   font-size: 2rem;
   color: #4B0082;
   background: transparent;
@@ -563,16 +580,19 @@ footer {
   }
 
   .lightbox-content {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: flex;
     gap: 1rem;
-    padding-top: 20rem;
+    padding-top: 6rem;
+    overflow-y: auto;
   }
 
   .lightbox-description {
     width: 100%;
     max-width: 100%;
-    margin-top: 1rem;
+  }
+
+  .lightbox-media {
+    max-width: 100%;
   }
 
   header {

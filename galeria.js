@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     media.addEventListener('click', () => {
       lightboxMedia.innerHTML = ''; // Limpia contenido previo
       const videoURL = media.dataset.video;
+      let mediaEl;
 
       if (videoURL) {
-        // Determinar tipo de video
+        // Video de YouTube
         if (videoURL.includes('youtube.com') || videoURL.includes('youtu.be')) {
-          // Convertir a embed de YouTube
           let videoId = '';
           if (videoURL.includes('youtu.be')) {
             videoId = videoURL.split('/').pop();
@@ -47,42 +47,53 @@ document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URL(videoURL).searchParams;
             videoId = urlParams.get('v');
           }
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-          iframe.frameBorder = 0;
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-          iframe.allowFullscreen = true;
-          iframe.classList.add('rounded-xl', 'overflow-hidden', 'block', 'w-full', 'max-h-[80vh]', 'mx-auto');
-          lightboxMedia.appendChild(iframe);
-        } else if (videoURL.includes('drive.google.com')) {
-          // Convertir enlace de Drive a descarga directa
+          mediaEl = document.createElement('iframe');
+          mediaEl.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          mediaEl.frameBorder = 0;
+          mediaEl.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          mediaEl.allowFullscreen = true;
+        }
+        // Video de Google Drive
+        else if (videoURL.includes('drive.google.com')) {
           const fileId = videoURL.split('/d/')[1]?.split('/')[0];
           if (fileId) {
             const driveLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
-            const video = document.createElement('video');
-            video.src = driveLink;
-            video.controls = true;
-            video.autoplay = true;
-            video.classList.add('rounded-xl', 'overflow-hidden', 'block', 'max-w-full', 'max-h-[80vh]', 'mx-auto');
-            lightboxMedia.appendChild(video);
+            mediaEl = document.createElement('video');
+            mediaEl.src = driveLink;
+            mediaEl.controls = true;
+            mediaEl.autoplay = true;
           } else {
             console.error('No se pudo extraer ID de Drive');
           }
         }
-      } else if (media.tagName.toLowerCase() === 'img') {
-        const img = document.createElement('img');
-        img.src = media.src;
-        img.alt = media.alt || '';
-        img.classList.add('w-full', 'rounded');
-        lightboxMedia.appendChild(img);
+      } 
+      // Imagen normal
+      else if (media.tagName.toLowerCase() === 'img') {
+        mediaEl = document.createElement('img');
+        mediaEl.src = media.src;
+        mediaEl.alt = media.alt || '';
       }
 
-      // Actualizar datos del lightbox
+      if (mediaEl) {
+        // ===== Estilos que limitan tamaño y mantienen proporción =====
+        mediaEl.style.maxWidth = '100%';
+        mediaEl.style.maxHeight = '80vh'; // máximo 80% de la altura de la pantalla
+        mediaEl.style.objectFit = 'contain';
+        mediaEl.classList.add('rounded-xl', 'block', 'mx-auto');
+
+        lightboxMedia.appendChild(mediaEl);
+      }
+
+      // ===== Actualizar datos del lightbox =====
       lightboxTitle.textContent = media.dataset.title || '';
       lightboxDescription.textContent = media.dataset.description || '';
       lightboxTools.textContent = media.dataset.tools ? `Herramientas: ${media.dataset.tools}` : '';
 
-      // Enlace dinámico
+      // Hacer que la descripción tenga scroll si es muy larga
+      lightboxDescription.style.maxHeight = '60vh';
+      lightboxDescription.style.overflowY = 'auto';
+
+      // ===== Enlace dinámico =====
       const enlace = media.dataset.link;
       const linkElement = document.getElementById('lightbox-link');
       if (enlace) {
