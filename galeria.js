@@ -10,23 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  // Filtro
+  // ===== FILTRO =====
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
 
       images.forEach(img => {
         const types = img.dataset.type.split(/[\s,]+/);
-        if (filter === 'all' || types.includes(filter)) {
-          img.classList.remove('hidden');
-        } else {
-          img.classList.add('hidden');
-        }
+        img.classList.toggle('hidden', !(filter === 'all' || types.includes(filter)));
       });
 
       filterButtons.forEach(btn => {
-        btn.style.backgroundColor = '#f2e8fc'; // gris claro (tailwind gray-300)
-        btn.style.color = '#2c1a38'; // lila oscuro
+        btn.style.backgroundColor = '#f2e8fc';
+        btn.style.color = '#2c1a38';
       });
 
       button.style.backgroundColor = '#2c1a38';
@@ -34,50 +30,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  // Lightbox con datos
+  // ===== LIGHTBOX =====
   images.forEach(media => {
     media.addEventListener('click', () => {
       lightboxMedia.innerHTML = ''; // Limpia contenido previo
+      const videoURL = media.dataset.video;
 
-      if (media.tagName.toLowerCase() === 'img') {
+      if (videoURL) {
+        // Determinar tipo de video
+        if (videoURL.includes('youtube.com') || videoURL.includes('youtu.be')) {
+          // Convertir a embed de YouTube
+          let videoId = '';
+          if (videoURL.includes('youtu.be')) {
+            videoId = videoURL.split('/').pop();
+          } else {
+            const urlParams = new URL(videoURL).searchParams;
+            videoId = urlParams.get('v');
+          }
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          iframe.frameBorder = 0;
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          iframe.classList.add('rounded-xl', 'overflow-hidden', 'block', 'w-full', 'max-h-[80vh]', 'mx-auto');
+          lightboxMedia.appendChild(iframe);
+        } else if (videoURL.includes('drive.google.com')) {
+          // Convertir enlace de Drive a descarga directa
+          const fileId = videoURL.split('/d/')[1]?.split('/')[0];
+          if (fileId) {
+            const driveLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            const video = document.createElement('video');
+            video.src = driveLink;
+            video.controls = true;
+            video.autoplay = true;
+            video.classList.add('rounded-xl', 'overflow-hidden', 'block', 'max-w-full', 'max-h-[80vh]', 'mx-auto');
+            lightboxMedia.appendChild(video);
+          } else {
+            console.error('No se pudo extraer ID de Drive');
+          }
+        }
+      } else if (media.tagName.toLowerCase() === 'img') {
         const img = document.createElement('img');
         img.src = media.src;
         img.alt = media.alt || '';
         img.classList.add('w-full', 'rounded');
         lightboxMedia.appendChild(img);
-      } else if (media.tagName.toLowerCase() === 'video' || media.dataset.video) {
-        const videoURL = media.dataset.video;
-
-        if (videoURL) {
-            // Creamos un iframe para YouTube
-            const iframe = document.createElement('iframe');
-            iframe.src = videoURL;
-            iframe.frameBorder = 0;
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
-            iframe.classList.add('rounded-xl', 'overflow-hidden', 'block', 'w-full', 'max-h-[80vh]', 'mx-auto');
-            lightboxMedia.appendChild(iframe);
-        } else {
-            // Video local
-            const video = document.createElement('video');
-            video.src = media.querySelector('source')?.src || media.src;
-            video.controls = true;
-            video.autoplay = true;
-            video.classList.add('rounded-xl', 'overflow-hidden',
-                'block', 'max-w-full', 'max-h-[80vh]', 'mx-auto');
-            lightboxMedia.appendChild(video);
-        }
       }
 
+      // Actualizar datos del lightbox
       lightboxTitle.textContent = media.dataset.title || '';
       lightboxDescription.textContent = media.dataset.description || '';
       lightboxTools.textContent = media.dataset.tools ? `Herramientas: ${media.dataset.tools}` : '';
 
-      // Enlace dinámico si aplica // 🔗 Enlace dinámico
-      const enlace = media.dataset.link; // ← aquí tomamos el enlace del dataset
+      // Enlace dinámico
+      const enlace = media.dataset.link;
       const linkElement = document.getElementById('lightbox-link');
-      
       if (enlace) {
         linkElement.href = enlace;
         linkElement.style.display = 'inline';
@@ -90,39 +97,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  // Cerrar lightbox al hacer clic fuera del contenido
+  // ===== CERRAR LIGHTBOX =====
   if (lightbox) {
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.add('hidden');
-      }
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.add('hidden');
     });
   }
 
-  // Cerrar con botón (la X)
-   if (closeButton && lightbox) {
+  if (closeButton && lightbox) {
     closeButton.addEventListener('click', () => {
       lightbox.classList.add('hidden');
     });
   }
 
-  //menu hamburgesa
+  // ===== MENU HAMBURGUESA =====
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
     document.querySelectorAll('#nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          navLinks.classList.remove('show');
-        }
+        if (window.innerWidth < 768) navLinks.classList.remove('show');
       });
     });
   } else {
     console.warn('No se encontró el botón o los enlaces de navegación');
   }
-
 });
-
