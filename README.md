@@ -6,4 +6,4 @@ El sitio presenta una selección de mis proyectos en diseño de interfaces, dise
 
 El objetivo del portfolio es mostrar mi perfil de forma clara, visual y funcional, así como facilitar el contacto para posibles oportunidades profesionales.
 
-👁️‍🗨️ Puedes visitar el portfolio en: [aquí irá tu enlace cuando lo publiques]
+👁️‍🗨️ Puedes visitar el portfolio en: https://andreamome.github.io/PORTFOLIO/
